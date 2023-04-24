@@ -7,28 +7,28 @@ let sender;
 if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
-  sender = "Adam";
+  sender = "Deris";
 }
 
 let footer = document.getElementById("credit");
 footer.innerHTML = sender;
-footer.href = "https://www.instagram.com/adamukti/";
+footer.href = "https://www.instagram.com/derissatrio/";
 
 document.querySelector(".tombol").addEventListener('click', function () {
-  Swal.fire("Hallo Sayangku", "Aku ada pertanyaan nih buat kamu?", "question").then(function () {
+  Swal.fire("Hallo Cayangku", "Aku ada pertanyaan nih buat kamu dari adais?", "question").then(function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
       Swal.fire("Awas aja kalo boong!!", "", "error").then(function () {
 
         const {
           value: name
         } = Swal.fire({
-          title: 'Masukin nama kamu dulu',
+          title: 'Masukin nama kamu dulu sayang',
           input: 'text',
           inputLabel: '',
           showCancelButton: true,
           inputValidator: (value) => {
             if (!value) {
-              return 'Isi dulu dong beb'
+              return 'Isi dulu dong sayang'
             } else {
               nama = value;
             }
@@ -45,7 +45,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
             if (result.isConfirmed) {
               Swal.fire(`${sender} juga sayang banget sama ${nama}`).then(function () {
                 Swal.fire({
-                  title: 'Seberapa sayang emangnya?',
+                  title: 'Seberapa sayang emangnya kau?',
                   icon: 'question',
                   input: 'range',
                   inputLabel: 'Antara 1 - 100 ya',
@@ -67,9 +67,20 @@ document.querySelector(".tombol").addEventListener('click', function () {
                     }).then((result) => {
                       /* Read more about isConfirmed, isDenied below */
                       if (result.isConfirmed) {
-                        Swal.fire(`Huhu iya ${sender} juga kangen ${nama} :((`).then(function () {
+                        Swal.fire(`Huhu iyaaaa ${sender} juga kangen ${nama} :((`).then(function () {
                           Swal.fire('Terakhir deh sayang').then(function () {
-                            Swal.fire('Coba klik ikon hati di paling bawah dong')
+                            Swal.fire({
+                              title: 'Adais Sayang kamu selalu',
+                              text: 'Ini waktu awal awal kita ketemu yaaa, yang masih malu malu gak kuat salting',
+                              imageUrl: 'IMG_20230110_233613_829.jpg',
+                              imageWidth: "auto",
+                              imageHeight: "auto",
+                              imageAlt: 'Foto pacar saya'
+                            })
+                            .then(() => {
+
+                              Swal.fire('Coba juga klik ikon hati di paling bawah dong sayang')
+                            })
                           })
                         })
                       } else if (result.isDenied) {
