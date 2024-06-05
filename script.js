@@ -15,37 +15,41 @@ footer.innerHTML = sender;
 footer.href = "https://www.instagram.com/derissatrio/";
 
 document.querySelector(".tombol").addEventListener('click', function () {
-  Swal.fire("Hallo Cayangku", "Aku ada pertanyaan nih buat kamu dari adais?", "question").then(function () {
+  Swal.fire("Hallo...", "ada pertanyaan nih buat kamu dari deris?", "question").then(function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
-      Swal.fire("Awas aja kalo boong!!", "", "error").then(function () {
+      Swal.fire("Gausah boong!", "", "error").then(function () {
 
         const {
           value: name
         } = Swal.fire({
-          title: 'Masukin nama kamu dulu sayang',
+          title: 'Masukin nama kamu dulu walau udah tau sih namanya lulu',
           input: 'text',
           inputLabel: '',
           showCancelButton: true,
           inputValidator: (value) => {
             if (!value) {
-              return 'Isi dulu dong sayang'
+              return 'Isi dulu dong'
             } else {
-              nama = value;
+              if (value != 'lulu') {
+                nama = value + ' (lulu)'
+              } else {
+                nama = value;
+              }
             }
           }
         }).then(function () {
           const pertanyaan = Swal.fire({
-            title: `${nama} sayang ga sama ${sender}?`,
+            title: `${nama} bolehin ${sender} kesituu gaa?`,
             showDenyButton: true,
             showCancelButton: false,
-            confirmButtonText: `Sayang`,
+            confirmButtonText: `Boleh`,
             denyButtonText: `Gak`,
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire(`${sender} juga sayang banget sama ${nama}`).then(function () {
+              Swal.fire(`yaudah gass kalo boleh nanti ${sender} kesitu wkwkwk`).then(function () {
                 Swal.fire({
-                  title: 'Seberapa sayang emangnya kau?',
+                  title: 'Setuju ga deris kalau ke situ?',
                   icon: 'question',
                   input: 'range',
                   inputLabel: 'Antara 1 - 100 ya',
@@ -57,35 +61,35 @@ document.querySelector(".tombol").addEventListener('click', function () {
                   inputValue: 50
                 }).then((e) => {
                   val = e.value
-                  Swal.fire(`Makasih ya udah sayang sama ${sender} ${val}%`).then(function () {
+                  Swal.fire(`Karena ${val}% yaudahh gass`).then(function () {
                     Swal.fire({
-                      title: `Sekarang ${nama} kangen ga sama ${sender}?`,
+                      title: `Boleh kan yaa? wkwkwkk`,
                       showDenyButton: true,
                       showCancelButton: false,
-                      confirmButtonText: `Kangen :(`,
+                      confirmButtonText: `Boleh :)`,
                       denyButtonText: `Gak!`,
                     }).then((result) => {
                       /* Read more about isConfirmed, isDenied below */
                       if (result.isConfirmed) {
-                        Swal.fire(`Huhu iyaaaa ${sender} juga kangen ${nama} :((`).then(function () {
-                          Swal.fire('Terakhir deh sayang').then(function () {
+                        Swal.fire(`yaudahh gass wkwkwk walau bingung`).then(function () {
+                          Swal.fire('Terakhir-terakhir').then(function () {
                             Swal.fire({
-                              title: 'Adais Sayang kamu selalu',
-                              text: 'Ini waktu awal awal kita ketemu yaaa, yang masih malu malu gak kuat salting',
-                              imageUrl: 'IMG_20230110_233613_829.jpg',
+                              title: 'Lulu geliss',
+                              text: 'Bingung mau naruh foto apa nih, ngasal aja wkwkwk, mungkin nanti bisa di ganti',
+                              imageUrl: 'https://awsimages.detik.net.id/community/media/visual/2016/10/08/a8f47740-8aa3-4a01-a284-b09a77047382.jpg?w=700&q=90',
                               imageWidth: "auto",
                               imageHeight: "auto",
-                              imageAlt: 'Foto pacar saya'
+                              imageAlt: 'Foto'
                             })
                             .then(() => {
 
-                              Swal.fire('Coba juga klik ikon hati di paling bawah dong sayang')
+                              Swal.fire('Coba juga klik ikon hati di paling bawah deh')
                             })
                           })
                         })
                       } else if (result.isDenied) {
-                        Swal.fire('Jahat banget emang ga kangen sama pacar sendiri', '', 'error').then(function () {
-                          Swal.fire('Yaudah deh bye!')
+                        Swal.fire(`yahh gabolehh?`, '', 'error').then(function () {
+                          Swal.fire('Yaudah deh')
                         })
                       }
                     })
@@ -93,8 +97,8 @@ document.querySelector(".tombol").addEventListener('click', function () {
                 })
               })
             } else if (result.isDenied) {
-              Swal.fire(`Yakin ga suka sama ${sender}?`, '', 'error').then(function () {
-                Swal.fire('Yaudah deh bye!')
+              Swal.fire(`yahh gabolehh?`, '', 'error').then(function () {
+                Swal.fire('Yaudah deh')
               })
             }
           })
